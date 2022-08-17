@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState"
-import { sandboxApi } from "./AxiosService"
+import { sandboxApi } from "./AxiosService.js"
 
 class ImageService{
   async getImage() {
