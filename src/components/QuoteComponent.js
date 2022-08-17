@@ -1,13 +1,17 @@
 import React from 'react'
 import { ProxyState } from '../AppState'
+
+
 import { quotesService } from '../services/QuotesService'
+
 
 
 class QuoteComponent extends React.Component {
   constructor(props){
     super(props)
-    this.state = ProxyState.quote
+    this.state = {quote: ProxyState.quote}
     this.getQuotes()
+    
   }
   async getQuotes() {
     try {
@@ -18,14 +22,14 @@ class QuoteComponent extends React.Component {
     }
   }
   render(){
-    
+   
     
     return (
       <div className='row flex-column'>
         <div className='text-center'>
-       {this.state.content}
+       {this.state.quote.content}
         </div>
-        <p className='text-center'>{this.state.author}</p>
+        <p className='text-center'>{this.state.quote.author}</p>
   
       </div>
     )

@@ -1,23 +1,15 @@
 
 import React from 'react';
-import './App.css';
 import { ProxyState } from './AppState';
 import QuoteComponent from './components/QuoteComponent';
 import { imageService } from './services/ImageService';
 
-// function App() {
-//   return (
-//     <div className="App container-fluid">
-//     <QuoteComponent />
-    
-//     </div>
-//   );
-// }
+
 
 class App extends React.Component{
   constructor(props){
     super(props)
-    this.state = ProxyState.image
+    this.state = {img: ProxyState.image}
     this.getImage()
   }
   async getImage() {
@@ -30,8 +22,9 @@ class App extends React.Component{
   }
   render(){
     return(
-      <div style={{backgroundImage:`url(${this.state.url})` }}>
-        <QuoteComponent />
+      <div style={{backgroundImage: `URL("${this.state.img.url}")`}}>
+
+        <QuoteComponent  />
       </div>
     )  
     }
