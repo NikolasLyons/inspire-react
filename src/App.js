@@ -21,8 +21,17 @@ class App extends React.Component{
     }
   }
   render(){
+    const myStyle={
+      backgroundImage: 
+`url('${this.setState()}')`,
+      height:'100vh',
+      marginTop:'-70px',
+      fontSize:'50px',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+  };
     return(
-      <div style={{backgroundImage: `URL("${this.state.img.url}")`}}>
+      <div style={myStyle}>
 
         <QuoteComponent  />
       </div>
