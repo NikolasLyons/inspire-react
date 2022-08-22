@@ -12,6 +12,7 @@ const ImageComponent = (props) => {
       const newImage = new ImageModel(res.data);
       console.log(newImage);
       image = newImage;
+      setUrl(newImage.image);
     }
   };
 
@@ -20,7 +21,7 @@ const ImageComponent = (props) => {
       <h1>{url}</h1>
       <button onClick={getImage}>Get Image</button>
       <div>
-        <img src={image.image} alt="Image.logo"></img>
+        <img src={url} alt="Image.logo"></img>
       </div>
     </>
   );
