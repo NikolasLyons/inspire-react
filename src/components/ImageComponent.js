@@ -11,7 +11,7 @@ const ImageComponent = (props) => {
   return (
     <>
       <h1>{url}</h1>
-      <button onClick={getImage()}>Get Image</button>
+      <button onClick={getImage}>Get Image</button>
     </>
   );
 };
